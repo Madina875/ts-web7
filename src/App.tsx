@@ -1,11 +1,8 @@
 import { memo } from "react";
+import AppRouter from "./pages";
 
 const App = () => {
-  return (
-    <div className="App">
-      <h2>App</h2>
-    </div>
-  );
+  return <AppRouter />;
 };
 
 export default memo(App);
