@@ -1,5 +1,6 @@
 import { memo } from "react";
 import { useFetch } from "../../hooks/useFetch";
+import { useNavigate } from "react-router-dom";
 
 type Category = {
   id: number;
@@ -10,6 +11,7 @@ type Category = {
 };
 
 const ProductsView = () => {
+  const navigate = useNavigate();
   const { data } = useFetch<Category[]>("/products");
   return (
     <>
@@ -21,7 +23,11 @@ const ProductsView = () => {
             className="border border-white grid gap-[20px] p-[10px]"
             key={e.id}
           >
-            <img src={e.images[0]} alt="" />
+            <img
+              onClick={() => navigate(`/products/${e.id}`)}
+              src={e.images[0]}
+              alt=""
+            />
             <h2>{e.title}</h2>
             <strong>{e.price}$</strong>
           </div>

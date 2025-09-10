@@ -3,7 +3,7 @@ import { memo } from "react";
 const NotFound = () => {
   return (
     <div className="NotFound">
-      <h2>NotFound</h2>
+      <h2 className="text-3xl text-red-700">NotFound</h2>
     </div>
   );
 };
